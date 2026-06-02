@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NÁTTARKLUBBIN — Tórshavn, Faroe Islands</title>
+  <meta name="description" content="Náttarklubbin — a Friday-night club for music lovers, inside the historic rooftop venue Havnar Klubbi, in the heart of Tórshavn, Faroe Islands. DJ nights, all events 18+." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NÁTTARKLUBBIN" />
+  <meta property="og:description" content="DJ nights in Tórshavn, Faroe Islands. 18+." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Background video ===== -->
+  <div class="bg" aria-hidden="true">
+    <video
+      id="bg-video"
+      class="bg__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="assets/poster.jpg"
+    >
+      <!-- Looping montage cut from @nattarklubbin event photos. See assets/README.md -->
+      <source src="assets/nattarklubbin-bg.mp4" type="video/mp4" />
+    </video>
+    <div class="bg__scrim"></div>
+    <div class="bg__grain"></div>
+  </div>
+
+  <!-- ===== Age gate (all events 18+) ===== -->
+  <div id="age-gate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+    <div class="age-gate__panel">
+      <p class="age-gate__kicker">Náttarklubbin · Havnar Klubbi</p>
+      <h1 id="age-gate-title" class="age-gate__title">18+</h1>
+      <p class="age-gate__copy">All nights at Náttarklubbin are strictly 18 and over. Confirm you are of age to enter.</p>
+      <div class="age-gate__actions">
+        <button id="age-yes" class="btn btn--solid" type="button">I am 18 or older</button>
+        <a id="age-no" class="btn btn--ghost" href="https://www.google.com" rel="noopener">Leave</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="#top" class="brand">NÁTTARKLUBBIN</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#current">Upcoming</a>
+      <a href="#past">Archive</a>
+      <a href="#info">Info</a>
+    </nav>
+    <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false" aria-label="Toggle background sound">
+      <span class="sound-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="sound-toggle__label">SOUND OFF</span>
+    </button>
+  </header>
+
+  <main id="top" class="scroller">
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <p class="hero__coords">62.0107° N · 6.7741° W</p>
+      <h1 class="hero__title">NÁTTAR&shy;KLUBBIN</h1>
+      <p class="hero__tagline">A Friday-night club for music lovers — inside the historic rooftop venue Havnar Klubbi, in the heart of Tórshavn, Faroe Islands.</p>
+      <a href="#current" class="hero__cta">See what's on ↓</a>
+    </section>
+
+    <!-- ===== Current / upcoming ===== -->
+    <section id="current" class="section">
+      <div class="section__head">
+        <h2 class="section__title">NOW &amp; NEXT</h2>
+        <p class="section__meta">Upcoming DJs &amp; residents · all 18+</p>
+      </div>
+      <ul id="current-list" class="events events--current" aria-live="polite"></ul>
+    </section>
+
+    <!-- ===== Past events archive ===== -->
+    <section id="past" class="section section--past">
+      <div class="section__head">
+        <h2 class="section__title">ARCHIVE</h2>
+        <p class="section__meta">Past nights at Náttarklubbin</p>
+      </div>
+      <ul id="past-list" class="events events--past"></ul>
+    </section>
+
+    <!-- ===== Info / footer ===== -->
+    <footer id="info" class="site-footer">
+      <div class="footer__grid">
+        <div class="footer__block">
+          <h3 class="footer__label">Venue</h3>
+          <p>Náttarklubbin<br />Inside Havnar Klubbi<br />100 Tórshavn<br />Faroe Islands</p>
+        </div>
+        <div class="footer__block">
+          <h3 class="footer__label">Doors</h3>
+          <p>Club nights from 23:00<br />Until late<br />Strictly 18+ · ID required</p>
+        </div>
+        <div class="footer__block">
+          <h3 class="footer__label">Contact</h3>
+          <p>
+            <a href="mailto:booking@nattarklubbin.fo">booking@nattarklubbin.fo</a><br />
+            <a href="https://instagram.com/nattarklubbin" rel="noopener">@nattarklubbin</a><br />
+            <a href="https://facebook.com/nattarklubbin" rel="noopener">Facebook</a>
+          </p>
+        </div>
+      </div>
+      <p class="footer__legal">© <span id="year"></span> Náttarklubbin · Havnar Klubbi, Tórshavn. All nights 18+. Designed for the dark.</p>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
