@@ -6,7 +6,7 @@
    ============================================================ */
 
 let EVENTS = [
-  { date: "2026-06-05", artist: "Thorgerður", support: "Mentanarnáttin · Culture Night · 100 DKK · kl. 23", tags: ["DJ","Eclectic"], status: "tickets", url: "https://instagram.com/nattarklubbin" },
+  { date: "2026-06-05", artist: "Thorgerður", support: "Mentanarnáttin · 100 DKK · kl. 23", tags: ["DJ","Eclectic"], status: "tickets", url: "https://instagram.com/nattarklubbin" },
   { date: "2026-05-22", artist: "DJ JazzyJazz", support: "Marianna Winter afterparty · all night long", tags: ["DJ","Afterparty"], status: "past" },
   { date: "2026-05-01", artist: "Brynjolfur", support: "Faroese techno pioneer · Side Effect", tags: ["DJ","Techno"], status: "past" },
   { date: "2026-04-24", artist: "BUDA", support: "Copenhagen club legend · kl. 23–03:45", tags: ["DJ","House"], status: "past" },
