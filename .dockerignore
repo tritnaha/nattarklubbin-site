@@ -1,7 +1,0 @@
-.git
-.gitignore
-README.md
-assets/README.md
-docker-compose.yml
-Dockerfile
-.dockerignore
