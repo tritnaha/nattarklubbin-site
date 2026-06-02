@@ -25,14 +25,15 @@ function formatDate(iso) {
 }
 function tagMarkup(tags){ return (tags||[]).map(t=>`<span class="tag">${t}</span>`).join(""); }
 function actionMarkup(ev){
-  if(ev.status==="soldout") return `<span class="event__cta" aria-disabled="true">Sold out</span>`;
-  if(ev.status==="tickets") return `<a class="event__cta" href="${ev.url||"#"}">Tickets</a>`;
+  if(ev.status==="soldout") return `<span class="event__cta" aria-disabled="true">At capacity</span>`;
+  const url = ev.url || (ev.status!=="past" ? "https://instagram.com/nattarklubbin" : "");
+  if(url) return `<a class="event__cta" href="${url}" target="_blank" rel="noopener">Info ↗</a>`;
   return "";
 }
 function eventMarkup(ev,{past=false}={}){
   const d=formatDate(ev.date);
   const ageTag=past?"":`<span class="tag tag--18">18+</span>`;
-  const soldTag=ev.status==="soldout"?`<span class="tag tag--sold">Sold out</span>`:"";
+  const soldTag=ev.status==="soldout"?`<span class="tag tag--sold">At capacity</span>`:"";
   return `
     <li class="event reveal">
       <div class="event__date">${d.line}<span class="day">${d.day}</span></div>

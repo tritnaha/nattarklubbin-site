@@ -97,7 +97,7 @@ function toEvent(post){
   const tags=['DJ']; if(/afterparty|aftan/i.test(post.caption)) tags.push('Afterparty');
   const t=post.caption.match(/Kl\.?\s*\d{1,2}[:.]?\d{0,2}\s*[–-]\s*\d{1,2}[:.]?\d{0,2}/i);
   return { date, artist:parseArtist(post.caption), support:t?clean(t[0]):'', tags, status,
-           igId:post.id, source:'instagram' };
+           url:`https://www.instagram.com/p/${post.id}/`, igId:post.id, source:'instagram' };
 }
 
 function load(){ try { return existsSync(OUT) ? JSON.parse(readFileSync(OUT,'utf8')) : []; } catch { return []; } }
