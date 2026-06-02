@@ -1,0 +1,19 @@
+[
+  {
+    "date": "2026-06-05",
+    "artist": "Thorgerður",
+    "support": "Mentanarnáttin · Culture Night · 100 DKK · kl. 23",
+    "tags": ["DJ", "Eclectic"],
+    "status": "tickets",
+    "url": "https://instagram.com/nattarklubbin",
+    "source": "seed"
+  },
+  { "date": "2026-05-22", "artist": "DJ JazzyJazz", "support": "Marianna Winter afterparty · all night long", "tags": ["DJ", "Afterparty"], "status": "past", "source": "seed" },
+  { "date": "2026-05-01", "artist": "Brynjolfur", "support": "Faroese techno pioneer · Side Effect", "tags": ["DJ", "Techno"], "status": "past", "source": "seed" },
+  { "date": "2026-04-24", "artist": "BUDA", "support": "Copenhagen club legend · kl. 23–03:45", "tags": ["DJ", "House"], "status": "past", "source": "seed" },
+  { "date": "2026-04-23", "artist": "TONIK Afterparty", "support": "official festival afterparty · late", "tags": ["DJ", "Afterparty"], "status": "past", "source": "seed" },
+  { "date": "2026-04-18", "artist": "Maria Fagranes", "support": "Copenhagen · deep & melodic · kl. 23–03:45", "tags": ["DJ", "Melodic"], "status": "past", "source": "seed" },
+  { "date": "2026-04-17", "artist": "DJ John Vincent (JVC)", "support": "Copenhagen turntablist", "tags": ["DJ", "Turntablism"], "status": "past", "source": "seed" },
+  { "date": "2026-04-10", "artist": "Mathias Mesteño", "support": "Copenhagen legend · disco, hip hop, latin", "tags": ["DJ", "Disco"], "status": "past", "source": "seed" },
+  { "date": "2026-03-13", "artist": "India", "support": "Friday the 13th · rock / horror quiz night", "tags": ["DJ", "Rock"], "status": "past", "source": "seed" }
+]
