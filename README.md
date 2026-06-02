@@ -3,20 +3,49 @@
 Website for **Náttarklubbin** — a Friday-night club for music lovers, inside the
 historic rooftop venue **Havnar Klubbi**, in the heart of Tórshavn, Faroe Islands.
 
-A single-page, dependency-free site: dark "oxblood suede" theme, a fullscreen
-looping background montage cut from club nights, an 18+ entry gate, and an
-auto-sorting list of upcoming and past DJ nights.
+A single-page site built with **plain HTML, CSS and JavaScript** — no build step,
+no framework, no dependencies. Dark "oxblood suede" theme, a fullscreen looping
+background montage cut from club nights, an 18+ entry gate, and an auto-sorting
+list of upcoming and past DJ nights.
 
-## Run
+## Serve it
 
-No build step. Serve the folder and open it:
+It's a static site, so **any web server works** — nginx, Caddy, Apache, a CDN, or
+a static host (Netlify / Vercel / GitHub Pages / Cloudflare Pages). Just point the
+server's web root at this folder.
+
+### nginx via Docker (recommended)
 
 ```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
+docker compose up -d --build
+# → http://localhost:8080
 ```
 
-(Serve over http rather than opening the file directly so the background video loads.)
+This builds an `nginx:alpine` image (see `Dockerfile`) using the tuned
+`nginx.conf` (gzip for text, byte-range for the video, sensible caching) and
+serves the site on port 8080.
+
+To run the image without compose:
+
+```bash
+docker build -t nattarklubbin-site .
+docker run -d -p 8080:80 --name nattarklubbin-site nattarklubbin-site
+```
+
+### Plain nginx (no Docker)
+
+Copy the static files into your web root and drop `nginx.conf` into the server
+block (e.g. `/etc/nginx/conf.d/default.conf`), then `nginx -s reload`.
+
+### Quick throwaway preview
+
+Any one-liner static server is fine for a glance (not for production):
+
+```bash
+python3 -m http.server 8000     # or:  npx serve .
+```
+
+Serve over http (not `file://`) so the background video loads.
 
 ## Structure
 
@@ -28,6 +57,7 @@ python3 -m http.server 8000
 | `assets/nattarklubbin-bg.mp4` | Looping background montage |
 | `assets/poster.jpg` | Video poster / fallback |
 | `assets/README.md` | How the background video was made and how to swap it |
+| `Dockerfile`, `nginx.conf`, `docker-compose.yml` | nginx serving setup |
 
 ## Editing events
 
